@@ -759,6 +759,7 @@ PresetUpdater::UpdateResult PresetUpdater::config_update(const Semver &old_slic3
 				auto* app_config = GUI::wxGetApp().app_config;
 				GUI::wxGetApp().preset_bundle->load_presets(*app_config);
 				GUI::wxGetApp().load_current_presets();
+				GUI::wxGetApp().plater()->set_bed_shape();
 				return R_UPDATE_INSTALLED;
 			}
 			else {
